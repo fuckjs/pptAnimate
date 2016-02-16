@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" href="css/FullPageScroll.css">
+		<link rel="stylesheet" href="css/index.css" />
+	</head>
+	<body>
+		<div id="container">
+			<div class="sections">
+				<div class="section" id="section0">
+					<h3 class="nowTime">
+					</h3>
+					<figure>
+						
+					</figure>
+					<div class="shopNum">
+						<p>累计注册商户数量</p>
+						<span class="keyNum">31.3万</span>
+					</div>
+					<div class="desc">
+						<div class="descBox">
+							<div class="sideDesc"></div>		<!-- 左右两侧的小红块 -->
+							<p class="keyDesc">注册商户数量</p>
+							<div class="sideDesc"></div>
+						</div>
+					</div>
+					<figure>
+						<img src="img/logo.png" alt="" />
+					</figure>
+				</div>
+				<div class="section" id="section1">
+					<h3 class="nowTime">
+					</h3>
+					<figure>
+						
+					</figure>
+					<div class="shopNum">
+						<p>累计支付交易数据</p>
+						<div>
+							<p>累计交易笔数&nbsp;<span class="keyNum">49.3万</span></p>  
+							<p>累计交易金额&nbsp;<span class="keyNum">39,661万</span></p> 
+						</div>
+					</div>
+					<div class="desc">
+						<div class="descBox">
+							<div class="sideDesc"></div>		<!-- 左右两侧的小红块 -->
+							<p class="keyDesc">支付交易数据</p>
+							<div class="sideDesc"></div>
+						</div>
+					</div>
+					<figure>
+						<img src="img/logo.png" alt="" />
+					</figure>
+				</div>
+				<div class="section" id="section2">
+					<h3 class="nowTime">
+					</h3>
+					<figure>
+						
+					</figure>
+					<div class="shopNum">
+						<p>累计改造POS数量</p>
+						<span class="keyNum">8,441台</span>
+					</div>
+					<div class="desc">
+						<div class="descBox">
+							<div class="sideDesc"></div>		<!-- 左右两侧的小红块 -->
+							<p class="keyDesc">改造POS数量</p>
+							<div class="sideDesc"></div>
+						</div>
+					</div>
+					<figure>
+						<img src="img/logo.png" alt="" />
+					</figure>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="js/sea.js"></script>
+	<script>
+		seajs.config({
+			alias : {
+				jQuery : 'jQuery-2.1.4.min.js'
+			},
+			preload : ['jQuery']
+		});
+		seajs.use("index.js",function(e){
+			e.start();
+		});
+	</script>
+	
+</html>
