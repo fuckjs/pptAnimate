@@ -1,94 +1,190 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8" />
-		<title></title>
-		<link rel="stylesheet" href="css/FullPageScroll.css">
-		<link rel="stylesheet" href="css/index.css" />
-	</head>
-	<body>
-		<div id="container">
-			<div class="sections">
-				<div class="section" id="section0">
-					<h3 class="nowTime">
-					</h3>
-					<figure>
-						
-					</figure>
-					<div class="shopNum">
-						<p>累计注册商户数量</p>
-						<span class="keyNum">31.3万</span>
-					</div>
-					<div class="desc">
-						<div class="descBox">
-							<div class="sideDesc"></div>		<!-- 左右两侧的小红块 -->
-							<p class="keyDesc">注册商户数量</p>
-							<div class="sideDesc"></div>
-						</div>
-					</div>
-					<figure>
-						<img src="img/logo.png" alt="" />
-					</figure>
-				</div>
-				<div class="section" id="section1">
-					<h3 class="nowTime">
-					</h3>
-					<figure>
-						
-					</figure>
-					<div class="shopNum">
-						<p>累计支付交易数据</p>
-						<div>
-							<p>累计交易笔数&nbsp;<span class="keyNum">49.3万</span></p>  
-							<p>累计交易金额&nbsp;<span class="keyNum">39,661万</span></p> 
-						</div>
-					</div>
-					<div class="desc">
-						<div class="descBox">
-							<div class="sideDesc"></div>		<!-- 左右两侧的小红块 -->
-							<p class="keyDesc">支付交易数据</p>
-							<div class="sideDesc"></div>
-						</div>
-					</div>
-					<figure>
-						<img src="img/logo.png" alt="" />
-					</figure>
-				</div>
-				<div class="section" id="section2">
-					<h3 class="nowTime">
-					</h3>
-					<figure>
-						
-					</figure>
-					<div class="shopNum">
-						<p>累计改造POS数量</p>
-						<span class="keyNum">8,441台</span>
-					</div>
-					<div class="desc">
-						<div class="descBox">
-							<div class="sideDesc"></div>		<!-- 左右两侧的小红块 -->
-							<p class="keyDesc">改造POS数量</p>
-							<div class="sideDesc"></div>
-						</div>
-					</div>
-					<figure>
-						<img src="img/logo.png" alt="" />
-					</figure>
-				</div>
-			</div>
-		</div>
-	</body>
-	<script src="js/sea.js"></script>
-	<script>
-		seajs.config({
-			alias : {
-				jQuery : 'jQuery-2.1.4.min.js'
-			},
-			preload : ['jQuery']
-		});
-		seajs.use("index.js",function(e){
-			e.start();
-		});
-	</script>
-	
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/main.css">
+	<script src="js/jQuery-2.1.4.min.js"></script>
+</head>
+<body>
+	<div class="BG-panel">
+		<div class="circle-lg"></div>
+		<div class="circle-left circle-sm"></div>
+		<div class="circle-right circle-sm"></div>
+		<div class="line-lg"></div>
+
+		<p class="title-sm text1 ">2016年</p>
+
+        <p class="title-sm text2 ">1月25日10点</p>
+
+        <p class="title-sm text3 ">累计注册商户数量</p>
+
+        <p class="title-lg text4  "><span id="text-num">10.0</span>万</p>
+	</div>
+</body>
+<script>
+	//判断浏览器是否支持动画
+    getVendorPrefix();
+    function getVendorPrefix() {
+        var agent = navigator.userAgent.toLowerCase();
+	    if( agent.indexOf(' applewebkit/') <= -1){
+	        alert("请用谷歌浏览器或360浏览器极速模式打开");
+	    }
+    }
+    var sleepTime = 5500;//每页动画结束后的停留时间（以500毫秒结尾）
+    var lastSleepTime = 1000;//全部动画结束后的停留时间
+    var numSleepTime = 3000;//等待时间后数字变动
+
+    $(".circle-left").addClass('circle-left-1');
+    $(".circle-right").addClass('circle-right-1');
+    $(".line-lg").addClass('line-lg-show-1');
+    $('.text4').addClass('text4-2');
+    setTimeout(numAnimation('#text-num', 10.1, 31.3, 1, 30.0, 0.1, 31.0, 0.1, 0.1, 1),3000);
+
+
+    function numAnimation(f, g, h, i, j, k, l, m, n, o) {//元素、开始值、结束值、小数点位数、1值、1速度、2值、2速度、3速度、执行方法
+        var num = g;
+        var a = setInterval(function () {
+            $(f).text(num.toFixed(i));
+            if (num < j) {
+                num = (num + k);
+            } else {
+                clearInterval(a);
+                bb();
+            }
+        }, 5);
+
+        function bb() {
+            var b = setInterval(function () {
+                $(f).text(num.toFixed(i));
+                if (num < l) {
+                    num = (num + m);
+                } else {
+                    clearInterval(b);
+                    cc();
+                }
+            }, 50);
+        }
+
+        function cc() {
+            var c = setInterval(function () {
+                $(f).text(num.toFixed(i));
+                if (num < h) {
+                    num = (num + n);
+                } else {
+                    switch (o){
+                        case 1:
+                            ddd1();
+                            break;
+                        case 2:
+                            ddd2();
+                            break;
+                        case 3:
+                            ddd3();
+                            break;
+                        default : break;
+                    }
+                    clearInterval(c);
+                }
+            }, 200);
+        }
+
+    }
+
+    function ddd1() {
+        setTimeout(function () {
+            //第一页，元素收起动画
+            $('.text1').removeClass('text1-1').addClass('text1-2');
+            $('.text2').removeClass('text2-1').addClass('text2-2');
+            $('.text3').removeClass('text3-1').addClass('text3-2');
+            $('.text4').removeClass('text4-1').addClass('text4-2');
+            $('.circle-right').removeClass('circle-right-1').addClass('circle-right-2');
+            $('.circle-left').removeClass('circle-left-1').addClass('circle-left-2');
+            $('.line-lg').removeClass('line-lg-1').addClass('line-lg-2');
+            $('.BG-panel').addClass('BG-panel-1');
+            setTimeout(function () {
+                //中间圆点放大，背景切换
+                $('.circle-lg').addClass('circle-lg-1');
+                $('.BG-panel').removeClass('BG-panel-1').addClass('BG-panel-2');
+                setTimeout(function () {
+                    $('.circle-lg').removeClass('circle-lg-1').css({
+                        'border-color': '#d7d7d7',
+                        'background-color': '#ffffff'
+                    });
+                    $('.circle-sm').addClass('circle-sm-2');
+                }, 300);
+                setTimeout(function () {
+                    //第二页，元素展开
+                    //圆点换色复位
+                    $('.circle-right').removeClass('circle-right-2').addClass('circle-right-1');
+                    $('.circle-left').removeClass('circle-left-2').addClass('circle-left-1');
+                    $('.line-lg').removeClass('line-lg-2').addClass('line-lg-1');
+                    $('.text1').removeClass('text1-2').addClass('text1-1').css('color', '#ffffff');
+                    $('.text2').removeClass('text2-2').addClass('text2-1').css('color', '#ffffff');
+                    $('.text5, .text6, .text7').show();
+                    $('.text5').addClass('text5-1');
+                    $('.text6').addClass('text6-1');
+                    $('.text7').addClass('text7-1');
+                    $('.text-little').addClass('text-little-1');
+                    setTimeout(function () {
+                        numAnimation('#text6-num', 10.1, 49.3, 1, 48.0, 0.1, 49.0, 0.1, 0.1);
+                        numAnimation('#text7-num', 1585, 39661, 0, 39448, 111, 39650, 11, 1, 2);
+                    }, numSleepTime);
+                }, 400);
+            }, 1000);
+        }, sleepTime);
+    }
+
+    function ddd2() {
+        //第二页，元素收起动画
+        setTimeout(function () {
+            $('.text1').removeClass('text1-1').addClass('text1-2');
+            $('.text2').removeClass('text2-1').addClass('text2-2');
+            $('.text5').removeClass('text5-1').addClass('text5-2');
+            $('.text6').removeClass('text6-1').addClass('text6-2');
+            $('.text7').removeClass('text7-1').addClass('text7-2');
+            $('.circle-right').removeClass('circle-right-1').addClass('circle-right-2');
+            $('.circle-left').removeClass('circle-left-1').addClass('circle-left-2');
+            $('.line-lg').removeClass('line-lg-1').addClass('line-lg-2');
+            $('.BG-panel').removeClass('BG-panel-2').addClass('BG-panel-3');
+            setTimeout(function () {
+                //第三页展开
+                $('.circle-lg').css({'border-color': '#ffa6a2', 'background-color': '#e5352d'});
+                $('.circle-sm').removeClass('circle-sm-2');
+            }, 200);
+            setTimeout(function () {
+                //背景切换
+                $('.circle-right').removeClass('circle-right-2').addClass('circle-right-1');
+                $('.circle-left').removeClass('circle-left-2').addClass('circle-left-1');
+                $('.line-lg').removeClass('line-lg-2').addClass('line-lg-1');
+                $('.text1').removeClass('text1-2').addClass('text1-1').css('color', '#a2a2a2');
+                $('.text2').removeClass('text2-2').addClass('text2-1').css('color', '#a2a2a2');
+                $('.text8').addClass('text8-1').show();
+                $('.text9').addClass('text9-1').show();
+                $('.text-little-tai').addClass('text-little-tai-1');
+                setTimeout(function () {
+                    numAnimation('#text9-num', 1000, 8441, 0, 8000, 111, 8426, 11, 1, 3);
+                }, numSleepTime);
+            }, 600);
+        }, sleepTime);
+    }
+
+    function ddd3() {
+        setTimeout(function () {
+            //第一页，元素收起动画
+            $('.circle-right').removeClass('circle-right-1').addClass('circle-right-2');
+            $('.circle-left').removeClass('circle-left-1').addClass('circle-left-2');
+            $('.line-lg').removeClass('line-lg-1').addClass('line-lg-2');
+            $('.text1').removeClass('text1-1').addClass('text1-2');
+            $('.text2').removeClass('text2-1').addClass('text2-2');
+            $('.text8').removeClass('text8-1').addClass('text8-2');
+            $('.text9').removeClass('text9-1').addClass('text9-2');
+            $('.text-little-tai').removeClass('text-little-tai-1').addClass('text-little-tai-2');
+            setTimeout(function () {
+                animationAll();
+            }, lastSleepTime);
+        }, sleepTime);
+    }
+
+</script>
 </html>
