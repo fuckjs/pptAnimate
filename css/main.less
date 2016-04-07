@@ -25,7 +25,7 @@ html,body{
 .BG-panel {
   position: relative;
   margin: 0 auto;
-  width: 1600px;
+  width: 1200px;
   height: 100%;
   font-family: "微软雅黑";
   font-weight: bold;
@@ -34,8 +34,8 @@ html,body{
 //中间的圆
 .circle-lg{
   position: absolute;
-  top: 200px;
-  left: 770px;
+  top: 124px;
+  left: 570px;
   width: 58px;
   height: 58px;
   border: 10px solid @color-3;
@@ -48,8 +48,8 @@ html,body{
 //两边的圆
 .circle-sm {
   position: absolute;
-  top: 212px;
-  left: 782px;
+  top: 133px;
+  left: 585px;
   width: 48px;
   height: 48px;
   border: 0px solid @color-3;
@@ -74,7 +74,7 @@ html,body{
 //贯穿圆的横线
 .line-lg{
 	position: absolute;
-	top:237px;
+	top:157px;
 	left: 770px;
 	width: 0px;
 	height: 10px;
@@ -91,7 +91,7 @@ html,body{
 .title-sm{
 	position: absolute;
 	top: 237px;
-	left: 770px;
+	left: 600px;
 	color: #a2a2a2;
 	font-size: 0px;
 }
@@ -127,54 +127,43 @@ html,body{
   animation-delay: @time-text-hood+0.2;
   animation-fill-mode: forwards;
   animation-timing-function: ease-out;
-
 }
-
-.text4-2 {
-  animation: text4-move-2 @time-line-hide;
-  animation-delay: 0s;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease-in;
-
-}
-
-
 
 @keyframes circle-flicker{
  	0%{
 		border-width:10px;
-		top:200px;
-		left: 770px;
+		top:124px;
+		left: 570px;
 	}
 	50%{
 		border-width:0px;
-		top:208px;
-		left: 778px
+		top:132px;
+		left: 578px
 	}
 	100%{
 		border-width: 10px;
-		top:200px;
-		left: 770px;
+		top:124px;
+		left: 570px;
 	}
 }
 
 @keyframes circle-left-move-1 {
   from {
-    left: 782px;
+    left: 585px;
     border-width: 0px
   }
   to {
-    left: 386px;
+    left: 200px;
     border-width: 8px
   }
 }
 @keyframes circle-right-move-1 {
   from {
-    left: 782px;
+    left: 585px;
     border-width: 0px;
   }
   to {
-    left: 1178px;
+    left: 970px;
     border-width: 8px;
   }
 }
@@ -191,68 +180,53 @@ html,body{
 @keyframes text1-move-1{
 	from {
 		font-size:0px;
-		top: 237px;
-		left: 770px;
+		top: 157px;
+		left: 600px;
 		opacity: 0;
 	}to{
-		font-size: 48px;
-		top: 80px;
-		left: 730px;
+		font-size: 34px;
+		top: 60px;
+		left: 550px;
 		opacity: 1;
 	}
 }
 @keyframes text1-move-2{
 	from {
 		font-size:0px;
-		top: 237px;
-		left: 770px;
+		top: 157px;
+		left: 600px;
 		opacity: 0;
 	}to{
-		font-size: 48px;
-		top: 300px;
-		left: 680px;
+		font-size: 34px;
+		top: 220px;
+		left: 510px;
 		opacity: 1;
 	}
 }
 @keyframes text1-move-3{
 	from {
 			font-size:0px;
-			top: 237px;
-			left: 770px;
+			top: 157px;
+			left: 600px;
 			opacity: 0;
 		}to{
-			font-size: 48px;
-			top: 800px;
-			left: 620px;
+			font-size: 34px;
+			top: 620px;
+			left: 490px;
 			opacity: 1;
 		}
 }
 @keyframes text4-move-1 {
   from {
     font-size: 0px;
-    top: 228px;
-    left: 930px;
+    top: 157px;
+    left: 600px;
     opacity: 0
   }
   to {
     font-size: 240px;
-    top: 400px;
-    left: 580px;
+    top: 300px;
+    left: 300px;
     opacity: 1
-  }
-}
-
-@keyframes text4-move-2 {
-  from {
-    font-size: 240px;
-    top: 400px;
-    left: 580px;
-    opacity: 1
-  }
-  to {
-    font-size: 0px;
-    top: 228px;
-    left: 930px;
-    opacity: 0
   }
 }
