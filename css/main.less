@@ -55,7 +55,7 @@ html,body{
   border: 0px solid @color-3;
   border-radius: 50%;
   background-color: @color-4;
-  z-index: 2;
+  z-index: 1;
 }
 .circle-left-1 {
   animation: circle-left-move-1 @time-line-show;
@@ -63,11 +63,23 @@ html,body{
   animation-fill-mode: forwards;
   animation-timing-function: ease-out;
 }
+.circle-left-2 {
+  animation: circle-left-move-2 @time-line-hide;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
+}
 .circle-right-1 {
   animation: circle-right-move-1 @time-line-show;
   animation-delay: 1.5s;
   animation-fill-mode: forwards;
   animation-timing-function: ease-out;
+}
+.circle-right-2 {
+  animation: circle-right-move-2 @time-line-hide;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
 }
 
 
@@ -86,6 +98,12 @@ html,body{
 	animation-fill-mode: forwards;
   	animation-timing-function: ease-out;
 }
+.line-lg-show-2{
+	animation: line-lg-show-2 @time-line-hide;
+	animation-delay: 0s;
+	animation-fill-mode: forwards;
+  	animation-timing-function: ease-in;
+}
 
 
 .title-sm{
@@ -95,23 +113,49 @@ html,body{
 	color: #a2a2a2;
 	font-size: 0px;
 }
-.text1{
+.title-lg {
+  color: @color-4;
+  position: absolute;
+  top: 228px;
+  left: 960px;
+  font-size: 0px;
+}
+
+.text1-1{
 	animation: text1-move-1 @time-line-show;
 	animation-delay: @time-text-hood;
 	animation-fill-mode: forwards;
 	animation-timing-function: ease-out;
 }
-.text2{
-	animation: text1-move-2 @time-line-show;
+.text1-2{
+	animation: text1-move-2 @time-line-hide;
+	animation-delay: 0;
+	animation-fill-mode: forwards;
+	animation-timing-function: ease-in;
+}
+.text2-1{
+	animation: text2-move-1 @time-line-show;
 	animation-delay: @time-text-hood;
 	animation-fill-mode: forwards;
 	animation-timing-function: ease-out;
 }
-.text3{
-	animation: text1-move-3 @time-line-show;
+.text2-2{
+	animation: text2-move-2 @time-line-hide;
+	animation-delay: 0;
+	animation-fill-mode: forwards;
+	animation-timing-function: ease-in;
+}
+.text3-1{
+	animation: text3-move-1 @time-line-show;
 	animation-delay: @time-text-hood;
 	animation-fill-mode: forwards;
 	animation-timing-function: ease-out;
+}
+.text3-2{
+	animation: text3-move-2 @time-line-hide;
+	animation-delay: 0;
+	animation-fill-mode: forwards;
+	animation-timing-function: ease-in;
 }
 
 .title-lg {
@@ -127,6 +171,87 @@ html,body{
   animation-delay: @time-text-hood+0.2;
   animation-fill-mode: forwards;
   animation-timing-function: ease-out;
+}
+.text4-2 {
+  animation: text4-move-2 @time-line-hide;
+  animation-delay: 0;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
+}
+.text5 {
+  display: none;
+  position: absolute;
+  top: 157px;
+  left: 600px;
+  width: 0px;
+  height: 0px;
+  font-size: 0px;
+  line-height: 252px;
+  background-color: #cb261e;
+  color: @color-1;
+  border: 1px solid @color-1;
+}
+.text5-1 {
+  animation: text5-move-1 @time-line-show;
+  animation-delay: @time-text-hood+0.2;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+}
+.text6 {
+  display: none;
+  position: absolute;
+  top: 157px;
+  left: 600px;
+  font-size: 0px;
+  color: @color-1;
+}
+.text6-1 {
+  animation: text6-move-1 @time-line-show;
+  animation-delay: @time-text-hood+0.3;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+}
+.text7 {
+  display: none;
+  position: absolute;
+  top: 157px;
+  left: 600px;
+  font-size: 0px;
+  color: @color-1;
+}
+.text7-1 {
+  animation: text7-move-1 @time-line-show;
+  animation-delay: @time-text-hood+0.2;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+}
+
+.BG-panel-1 {
+  animation: BG-panel-move-1 @time-bg-1;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
+}
+.BG-panel-2 {
+  animation: BG-panel-move-2 @time-bg-2;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+}
+
+.circle-lg-1 {
+  animation: circle-lg-move-1 @time-circle-lg-show;
+  //animation: circle-lg-move-1 3s;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0,0.5,1,1);
+}
+.circle-sm-2 {
+  border: 0px solid @color-2;
+  background-color: @color-1;
+}
+.line-lg-1{
+
 }
 
 @keyframes circle-flicker{
@@ -157,6 +282,16 @@ html,body{
     border-width: 8px
   }
 }
+@keyframes circle-left-move-2 {
+  from {
+    left: 200px;
+    border-width: 8px
+  }
+  to {
+    left: 585px;
+    border-width: 0px
+  }
+}
 @keyframes circle-right-move-1 {
   from {
     left: 585px;
@@ -165,6 +300,16 @@ html,body{
   to {
     left: 970px;
     border-width: 8px;
+  }
+}
+@keyframes circle-right-move-2 {
+  from {
+    left: 970px;
+    border-width: 8px;
+  }
+  to {
+    left: 585px;
+    border-width: 0px;
   }
 }
 @keyframes line-lg-show-1{
@@ -176,6 +321,15 @@ html,body{
 		width: 100%;
 		left: 0px
 	}
+}
+@keyframes line-lg-show-2{
+	from{
+		width: 100%;
+		left: 0px
+		}to{
+		width: 0px;
+		left: 770px;
+		}
 }
 @keyframes text1-move-1{
 	from {
@@ -192,6 +346,20 @@ html,body{
 }
 @keyframes text1-move-2{
 	from {
+		font-size: 34px;
+		top: 60px;
+		left: 550px;
+		opacity: 1;
+		
+	}to{
+		font-size:0px;
+		top: 157px;
+		left: 600px;
+		opacity: 0;
+	}
+}
+@keyframes text2-move-1{
+	from {
 		font-size:0px;
 		top: 157px;
 		left: 600px;
@@ -203,7 +371,20 @@ html,body{
 		opacity: 1;
 	}
 }
-@keyframes text1-move-3{
+@keyframes text2-move-2{
+	from {
+		font-size: 34px;
+		top: 220px;
+		left: 510px;
+		opacity: 1;
+	}to{
+		font-size:0px;
+		top: 157px;
+		left: 600px;
+		opacity: 0;
+	}
+}
+@keyframes text3-move-1{
 	from {
 			font-size:0px;
 			top: 157px;
@@ -216,6 +397,19 @@ html,body{
 			opacity: 1;
 		}
 }
+@keyframes text3-move-2{
+	from {
+			font-size: 34px;
+			top: 620px;
+			left: 490px;
+			opacity: 1;
+		}to{
+			font-size:0px;
+			top: 157px;
+			left: 600px;
+			opacity: 0;
+		}
+}
 @keyframes text4-move-1 {
   from {
     font-size: 0px;
@@ -226,7 +420,109 @@ html,body{
   to {
     font-size: 240px;
     top: 300px;
-    left: 300px;
+    left: 240px;
     opacity: 1
+  }
+}
+@keyframes text4-move-2{
+	from {
+    font-size: 240px;
+    top: 300px;
+    left: 240px;
+    opacity: 1
+  }
+  to {
+    font-size: 0px;
+    top: 157px;
+    left: 600px;
+    opacity: 0
+  }
+}
+
+@keyframes BG-panel-move-1 {
+  from {
+    opacity: 1
+  }
+  to {
+    opacity: 0;
+    background-image: url("");
+  }
+}
+
+
+@keyframes circle-lg-move-1 {
+  0% {
+    width: 58px;
+    height: 58px;
+  }
+  80% {
+    border-width: 200px
+  }
+  100% {
+    width: 600px;
+	height: 600px;
+	top: -250px;
+	left: 0;
+	border-width: 0px;
+	border-radius: 100%; 
+    opacity: 0
+  }
+}
+
+@keyframes BG-panel-move-2{
+ 	0% {
+	    opacity: 0;
+	  }
+	  99% {
+	    opacity: 1;
+	    background-color: @color-1
+	  }
+	  100% {
+	    opacity: 1;
+	    //background-image: url('../img/bg-red.png');
+	  }
+}
+@keyframes text5-move-1 {
+  from {
+    top: 157px;
+    left: 600px;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  to {
+    font-size: 72px;
+    top: 380px;
+    left: 180px;
+    opacity: 1;
+    width: 415px;
+    height: 252px;
+  }
+}
+@keyframes text6-move-1 {
+  from {
+    top: 157px;
+    left: 600px;
+    opacity: 0;
+  }
+  to {
+    font-size: 80px;
+    top: 380px;
+    left: 640px;
+    opacity: 1;
+  }
+}
+
+@keyframes text7-move-1 {
+  from {
+    top: 157px;
+    left: 600px;
+    opacity: 0;
+  }
+  to {
+    font-size: 80px;
+    top: 530px;
+    left: 640px;
+    opacity: 1;
   }
 }
